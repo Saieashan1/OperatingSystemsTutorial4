@@ -1,43 +1,37 @@
-/*
- * Tutorial 4 Jeopardy Project for SOFE 3950U / CSCI 3020U: Operating Systems
- *
- * Copyright (C) 2015, <GROUP MEMBERS>
- * All rights reserved.
- *
- */
+/* questions.c */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "questions.h"
+#include "categories.h"
 
-// Initializes the array of questions for the game
-void initialize_game(void)
+static question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES];
+
+void initialize_game(question *questions)
 {
-    // initialize each question struct and assign it to the questions array
+    // Implement initialization of questions array
 }
 
-// Displays each of the remaining categories and question dollar values that have not been answered
-void display_categories(void)
+void display_categories(question *questions)
 {
-    // print categories and dollar values for each unanswered question in questions array
+    // Implement display of remaining categories and question dollar values
 }
 
-// Displays the question for the category and dollar value
-void display_question(char *category, int value)
+void display_question(question *questions, char *category, int value)
 {
-
+    // Implement display of a specific question
 }
 
-// Returns true if the answer is correct for the question for that category and dollar value
-bool valid_answer(char *category, int value, char *answer)
+bool valid_answer(question *questions, char *category, int value, char *answer)
 {
-    // Look into string comparison functions
+    // Implement answer validation logic
     return false;
 }
 
-// Returns true if the question has already been answered
-bool already_answered(char *category, int value)
+bool already_answered(question *questions, char *category, int value)
 {
-    // lookup the question and see if it's already been marked as answered
+    // Implement check if the question has already been answered
     return false;
 }
