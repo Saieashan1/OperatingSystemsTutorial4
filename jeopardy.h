@@ -3,15 +3,10 @@
 #ifndef JEOPARDY_H_
 #define JEOPARDY_H_
 
-#define MAX_LEN 256
-#define NUM_PLAYERS 4
-
-typedef struct {
-    char name[MAX_LEN];
-    int score;
-} player;
+#include "questions.h"
+#include "players.h"
 
 extern void tokenize(char *input, char **tokens);
-extern void show_results(player *players, int num_players);
+extern void show_results(player *players);
 
 #endif /* JEOPARDY_H_ */
