@@ -1,54 +1,40 @@
-/*
- * Tutorial 4 Jeopardy Project for SOFE 3950U / CSCI 3020U: Operating Systems
- *
- * Copyright (C) 2015, <GROUP MEMBERS>
- * All rights reserved.
- *
- */
+/* jeopardy.c */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
+#include "jeopardy.h"
 #include "questions.h"
 #include "players.h"
-#include "jeopardy.h"
 
-// Put macros or constants here using #define
-#define BUFFER_LEN 256
-#define NUM_PLAYERS 4
-
-// Put global environment variables here
-
-// Processes the answer from the user containing what is or who is and tokenizes it to retrieve the answer.
-void tokenize(char *input, char **tokens);
-
-// Displays the game results for each player, their name and final score, ranked from first to last place
-void show_results(player *players, int num_players);
-
-
-int main(int argc, char *argv[])
+int main()
 {
-    // An array of 4 players, may need to be a pointer if you want it set dynamically
     player players[NUM_PLAYERS];
-    
-    // Input buffer and and commands
-    char buffer[BUFFER_LEN] = { 0 };
+    char buffer[MAX_LEN];
 
-    // Display the game introduction and initialize the questions
     initialize_game();
 
-    // Prompt for players names
-    
-    // initialize each of the players in the array
-
-    // Perform an infinite loop getting command input from users until game ends
-    while (fgets(buffer, BUFFER_LEN, stdin) != NULL)
+    for (int i = 0; i < NUM_PLAYERS; ++i)
     {
-        // Call functions from the questions and players source files
-
-        // Execute the game until all questions are answered
-
-        // Display the final results and exit
+        printf("Enter the name of player %d: ", i + 1);
+        fgets(buffer, MAX_LEN, stdin);
+        buffer[strcspn(buffer, "\n")] = '\0';
+        initialize_player(&players[i], buffer);
     }
+
+    while (1)
+    {
+        display_categories_and_values();
+        
+        // Implement game logic here
+
+        // Check if the game has ended
+        if (is_game_over())
+        {
+            show_results(players, NUM_PLAYERS);
+            break;
+        }
+    }
+
     return EXIT_SUCCESS;
 }
