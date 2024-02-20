@@ -5,8 +5,8 @@
 
 #include <stdbool.h>
 
-#define MAX_CATEGORIES  // Define the maximum number of categories
-#define NUM_DOLLAR_VALUES  // Define the number of dollar values per category
+#define MAX_CATEGORIES 5  // Change to your desired value
+#define NUM_DOLLAR_VALUES 5  // Change to your desired value
 #define MAX_QUESTION_LEN 256
 
 // Structure definition for a question
@@ -19,10 +19,10 @@ typedef struct {
 } question;
 
 // Function prototypes
-extern void initialize_game(question *questions);
-extern void display_categories(question *questions);
-extern void display_question(question *questions, char *category, int value);
-extern bool valid_answer(question *questions, char *category, int value, char *answer);
-extern bool already_answered(question *questions, char *category, int value);
+extern void initialize_game(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES]);
+extern void display_categories(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES]);
+extern void display_question(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES], char *category, int value);
+extern bool valid_answer(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES], char *category, int value, char *answer);
+extern bool already_answered(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES], char *category, int value);
 
 #endif /* QUESTIONS_H_ */
