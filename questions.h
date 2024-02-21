@@ -1,28 +1,20 @@
-/* questions.h */
-
-#ifndef QUESTIONS_H_
-#define QUESTIONS_H_
+#ifndef QUESTIONS_H
+#define QUESTIONS_H
 
 #include <stdbool.h>
 
-#define MAX_CATEGORIES 5  // Change to your desired value
-#define NUM_DOLLAR_VALUES 5  // Change to your desired value
-#define MAX_QUESTION_LEN 256
-
-// Structure definition for a question
 typedef struct {
-    char category[MAX_QUESTION_LEN];
-    char question[MAX_QUESTION_LEN];
-    char answer[MAX_QUESTION_LEN];
+    char category[50];
+    char question[200];
+    char answer[50];
     int value;
-    bool answered;
-} question;
+    int answered; // 0 for false, 1 for true
+} Question;
 
-// Function prototypes
-extern void initialize_game(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES]);
-extern void display_categories(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES]);
-extern void display_question(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES], char *category, int value);
-extern bool valid_answer(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES], char *category, int value, char *answer);
-extern bool already_answered(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES], char *category, int value);
+void initialize_game(Question *questions);
+void display_categories(Question *questions);
+void display_question(Question *questions, char *category, int value);
+bool valid_answer(Question *questions, char *category, int value, char *answer);
+bool already_answered(Question *questions, char *category, int value);
 
-#endif /* QUESTIONS_H_ */
+#endif
