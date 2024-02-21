@@ -7,26 +7,26 @@
 void initialize_game(void) {
     // Programming category
     strcpy(questions[0].category, "sports");
-    strcpy(questions[0].question, "What is basketball?");
-    strcpy(questions[0].answer, "Fun");
+    strcpy(questions[0].question, "Who is the better Canadian Team?");
+    strcpy(questions[0].answer, "Toronto Raptors");
     questions[0].value = 100;
     questions[0].answered = false;
 
-    strcpy(questions[1].category, "programming");
-    strcpy(questions[1].question, "What is a COCOMO?");
-    strcpy(questions[1].answer, "data");
+    strcpy(questions[1].category, "Science");
+    strcpy(questions[1].question, "What is a K?");
+    strcpy(questions[1].answer, "potassium");
     questions[1].value = 200;
     questions[1].answered = false;
 
-    strcpy(questions[2].category, "programming");
-    strcpy(questions[2].question, "What is a loop?");
-    strcpy(questions[2].answer, "iteration");
+    strcpy(questions[2].category, "Fantasy");
+    strcpy(questions[2].question, "Who was the top player in fantasy basketball?");
+    strcpy(questions[2].answer, "Lamar Jackson");
     questions[2].value = 300;
     questions[2].answered = false;
 
     // Algorithms category
-    strcpy(questions[3].category, "algorithms");
-    strcpy(questions[3].question, "Leafs long-lasting player is;
+    strcpy(questions[3].category, "Maple Leafs");
+    strcpy(questions[3].question, "Leaf's long-lasting player is;
     strcpy(questions[3].answer, "Morgan Reilly");
     questions[3].value = 100;
     questions[3].answered = false;
@@ -44,21 +44,21 @@ void initialize_game(void) {
     questions[5].answered = false;
 
     // Databases category
-    strcpy(questions[6].category, "databases");
-    strcpy(questions[6].question, "What is a table?");
-    strcpy(questions[6].answer, "relation");
+    strcpy(questions[6].category, "NHL");
+    strcpy(questions[6].question, "Who won All-Star MVP");
+    strcpy(questions[6].answer, "Matthews");
     questions[6].value = 100;
     questions[6].answered = false;
 
-    strcpy(questions[7].category, "databases");
-    strcpy(questions[7].question, "What is a link?");
-    strcpy(questions[7].answer, "connects");
+    strcpy(questions[7].category, "math");
+    strcpy(questions[7].question, "What is a 1+1?");
+    strcpy(questions[7].answer, "2");
     questions[7].value = 200;
     questions[7].answered = false;
 
     strcpy(questions[8].category, "NBA");
-    strcpy(questions[8].question, "What is a the Raptors record?");
-    strcpy(questions[8].answer, "15-29");
+    strcpy(questions[8].question, "What is the Raptors record?");
+    strcpy(questions[8].answer, "15-30");
     questions[8].value = 300;
     questions[8].answered = false;
 
