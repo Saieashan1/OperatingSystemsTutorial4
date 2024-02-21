@@ -1,20 +1,32 @@
-#ifndef QUESTIONS_H
-#define QUESTIONS_H
+#ifndef QUESTIONS_H_
+#define QUESTIONS_H_
+
+#include <stdbool.h>
+
+#define MAX_LEN 256
+#define NUM_CATEGORIES 3
+#define NUM_QUESTIONS 12
+
+static char categories[NUM_CATEGORIES][MAX_LEN] = {
+    "programming",
+    "algorithms",
+    "databases"
+};
 
 typedef struct {
-    char category[50];
-    char question[200];
-    char answer[50];
+    char category[MAX_LEN];
+    char question[MAX_LEN];
+    char answer[MAX_LEN];
     int value;
-    int answered; // 0 for false, 1 for true
-} Question;
+    bool answered;
+} question;
 
-void initialize_game(Question *questions);
-void display_categories(Question *questions);
-void display_question(Question *questions, char *category, int value);
-int determine_question_index(Question *questions, char *category, int value);
-int valid_answer(Question *questions, char *category, int value, char *answer);
-int already_answered(Question *questions, char *category, int value);
+static question questions[NUM_QUESTIONS];
 
-#endif
+extern void initialize_game(void);
+extern void display_categories(void);
+extern void display_question(char *category, int value);
+extern bool valid_answer(char *category, int value, char *answer);
+extern bool already_answered(char *category, int value);
 
+#endif /* QUESTIONS_H_ */
