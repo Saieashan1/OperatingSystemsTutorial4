@@ -18,33 +18,33 @@ void initialize_game(void) {
     questions[1].value = 200;
     questions[1].answered = false;
 
-    strcpy(questions[2].category, "Fantasy");
+    strcpy(questions[2].category, "sports");
     strcpy(questions[2].question, "Who was the top player in fantasy basketball?");
     strcpy(questions[2].answer, "Lamar Jackson");
     questions[2].value = 300;
     questions[2].answered = false;
 
     // Algorithms category
-    strcpy(questions[3].category, "Maple Leafs");
+    strcpy(questions[3].category, "Sports");
     strcpy(questions[3].question, "Leaf's long-lasting player is;
     strcpy(questions[3].answer, "Morgan Reilly");
     questions[3].value = 100;
     questions[3].answered = false;
 
-    strcpy(questions[4].category, "algorithms");
+    strcpy(questions[4].category, "Math");
     strcpy(questions[4].question, "What is DFS?");
     strcpy(questions[4].answer, "left to right");
     questions[4].value = 200;
     questions[4].answered = false;
 
-    strcpy(questions[5].category, "NHL");
+    strcpy(questions[5].category, "Sports");
     strcpy(questions[5].question, "Who won the championship?");
     strcpy(questions[5].answer, "VEGAS");
     questions[5].value = 300;
     questions[5].answered = false;
 
     // Databases category
-    strcpy(questions[6].category, "NHL");
+    strcpy(questions[6].category, "Sportd");
     strcpy(questions[6].question, "Who won All-Star MVP");
     strcpy(questions[6].answer, "Matthews");
     questions[6].value = 100;
