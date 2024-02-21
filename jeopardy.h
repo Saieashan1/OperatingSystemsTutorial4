@@ -1,10 +1,8 @@
-#ifndef JEOPARDY_H
-#define JEOPARDY_H
+#ifndef JEOPARDY_H_
+#define JEOPARDY_H_
 
-#include "questions.h"
 #include "players.h"
 
-void tokenize(char *input, char **tokens);
-void show_results(Player *players);
-
-#endif
+extern void tokenize(char *input, char **tokens);
+extern void show_results(player *players, int num_players);
+#endif /* JEOPARDY_H_ */
