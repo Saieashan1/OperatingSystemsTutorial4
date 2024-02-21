@@ -1,14 +1,16 @@
-#ifndef PLAYERS_H
-#define PLAYERS_H
+#ifndef PLAYERS_H_
+#define PLAYERS_H_
 
 #include <stdbool.h>
 
+#define MAX_LEN 256
+
 typedef struct {
-    char name[50];
+    char name[MAX_LEN];
     int score;
-} Player;
+} player;
 
-bool player_exists(Player *players, char *name);
-void update_score(Player *players, char *name, int score);
+extern bool player_exists(player *players, int num_players, char *name);
+extern void update_score(player *players, int num_players, char *name, int score);
 
-#endif
+#endif /* PLAYERS_H_ */
