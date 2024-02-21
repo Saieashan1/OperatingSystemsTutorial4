@@ -45,7 +45,7 @@ int main() {
 
             // Get and process the player's answer
             char answer[50];
-            printf("Your answer (start with 'what is' or 'who is'): ");
+            printf("Your answer (Who will win the NBA championship?): ");
             scanf("%s", answer);
 
             // Check if the answer is correct
