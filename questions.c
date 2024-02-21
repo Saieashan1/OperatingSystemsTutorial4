@@ -1,54 +1,106 @@
-#include "questions.h"
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include "questions.h"
 
-void initialize_game(Question *questions) {
-    // Simple initialization example (replace with your own logic)
-    for (int i = 0; i < 10; ++i) {
-        sprintf(questions[i].category, "Category %d", i + 1);
-        sprintf(questions[i].question, "What is the question for Category %d?", i + 1);
-        sprintf(questions[i].answer, "Answer%d", i + 1);
-        questions[i].value = (i + 1) * 100;
-        questions[i].answered = 0; // Not answered
+void initialize_game(void) {
+    // Programming category
+    strcpy(questions[0].category, "sports");
+    strcpy(questions[0].question, "What is basketball?");
+    strcpy(questions[0].answer, "Fun");
+    questions[0].value = 100;
+    questions[0].answered = false;
+
+    strcpy(questions[1].category, "programming");
+    strcpy(questions[1].question, "What is a COCOMO?");
+    strcpy(questions[1].answer, "data");
+    questions[1].value = 200;
+    questions[1].answered = false;
+
+    strcpy(questions[2].category, "programming");
+    strcpy(questions[2].question, "What is a loop?");
+    strcpy(questions[2].answer, "iteration");
+    questions[2].value = 300;
+    questions[2].answered = false;
+
+    // Algorithms category
+    strcpy(questions[3].category, "algorithms");
+    strcpy(questions[3].question, "Leafs long-lasting player is;
+    strcpy(questions[3].answer, "Morgan Reilly");
+    questions[3].value = 100;
+    questions[3].answered = false;
+
+    strcpy(questions[4].category, "algorithms");
+    strcpy(questions[4].question, "What is DFS?");
+    strcpy(questions[4].answer, "left to right");
+    questions[4].value = 200;
+    questions[4].answered = false;
+
+    strcpy(questions[5].category, "NHL");
+    strcpy(questions[5].question, "Who won the championship?");
+    strcpy(questions[5].answer, "VEGAS");
+    questions[5].value = 300;
+    questions[5].answered = false;
+
+    // Databases category
+    strcpy(questions[6].category, "databases");
+    strcpy(questions[6].question, "What is a table?");
+    strcpy(questions[6].answer, "relation");
+    questions[6].value = 100;
+    questions[6].answered = false;
+
+    strcpy(questions[7].category, "databases");
+    strcpy(questions[7].question, "What is a link?");
+    strcpy(questions[7].answer, "connects");
+    questions[7].value = 200;
+    questions[7].answered = false;
+
+    strcpy(questions[8].category, "NBA");
+    strcpy(questions[8].question, "What is a the Raptors record?");
+    strcpy(questions[8].answer, "15-29");
+    questions[8].value = 300;
+    questions[8].answered = false;
+
+    // Set the value for the last question
+    questions[11].value = 300;
+}
+
+
+void display_categories(void) {
+    printf("Categories:\n");
+    for (int i = 0; i < NUM_CATEGORIES; ++i) {
+        printf("%s\n", categories[i]);
     }
 }
 
-void display_categories(Question *questions) {
-    // Simple example to display categories and values
-    printf("Categories and Values:\n");
-    for (int i = 0; i < 10; ++i) {
-        if (!questions[i].answered) {
-            printf("%s - $%d\n", questions[i].category, questions[i].value);
-        }
-    }
-}
-
-void display_question(Question *questions, char *category, int value) {
-    // Simple example to display a question
-    int index = determine_question_index(questions, category, value);
-    printf("Question for %s - $%d:\n", category, value);
-    printf("%s\n", questions[index].question);
-}
-
-int determine_question_index(Question *questions, char *category, int value) {
-    // Simple example to determine the index based on category and value
-    for (int i = 0; i < 10; ++i) {
+void display_question(char *category, int value) {
+    for (int i = 0; i < NUM_QUESTIONS; ++i) {
         if (strcmp(questions[i].category, category) == 0 && questions[i].value == value) {
-            return i;
+            printf("Category: %s\n", questions[i].category);
+            printf("Question for $%d: %s\n", questions[i].value, questions[i].question);
+            return;
         }
     }
-    return -1; // Not found
 }
 
-int valid_answer(Question *questions, char *category, int value, char *answer) {
-    // Simple example to check if the answer is correct
-    int index = determine_question_index(questions, category, value);
-    return (index != -1 && strcmp(questions[index].answer, answer) == 0);
+bool valid_answer(char *category, int value, char *answer) {
+    for (int i = 0; i < NUM_QUESTIONS; ++i) {
+        if (strcmp(questions[i].category, category) == 0 && questions[i].value == value) {
+            questions[i].answered = true;
+            return strcmp(questions[i].answer, answer) == 0;
+        }
+    }
+    return false; // Question not found
 }
 
-int already_answered(Question *questions, char *category, int value) {
-    // Simple example to check if the question has already been answered
-    int index = determine_question_index(questions, category, value);
-    return (index != -1 && questions[index].answered == 1);
+bool already_answered(char *category, int value) {
+    for (int i = 0; i < NUM_QUESTIONS; ++i) {
+        if (strcmp(questions[i].category, category) == 0 && questions[i].value == value) {
+            return questions[i].answered;
+        }
+    }
+    return true; // Question not found
 }
+
+questions.c
