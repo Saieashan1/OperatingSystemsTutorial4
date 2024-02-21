@@ -8,9 +8,9 @@
 #define NUM_QUESTIONS 12
 
 static char categories[NUM_CATEGORIES][MAX_LEN] = {
-    "programming",
-    "algorithms",
-    "databases"
+    "sports",
+    "math",
+    "science"
 };
 
 typedef struct {
