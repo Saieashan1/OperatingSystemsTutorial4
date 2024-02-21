@@ -1,37 +1,22 @@
-/* questions.c */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
 #include "questions.h"
-#include "categories.h"
+#include <stdio.h>
 
-static question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES];
-
-void initialize_game(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES])
-{
-    // Implement initialization of questions array
+void initialize_game(Question *questions) {
+    // Implementation to initialize questions array (e.g., hardcoding for simplicity)
 }
 
-void display_categories(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES])
-{
-    // Implement display of remaining categories and question dollar values
+void display_categories(Question *questions) {
+    // Implementation to display remaining categories and question dollar values
 }
 
-void display_question(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES], char *category, int value)
-{
-    // Implement display of a specific question
+void display_question(Question *questions, char *category, int value) {
+    // Implementation to display the question for the given category and dollar value
 }
 
-bool valid_answer(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES], char *category, int value, char *answer)
-{
-    // Implement answer validation logic
-    return false;
+bool valid_answer(Question *questions, char *category, int value, char *answer) {
+    // Implementation to check if the provided answer is correct
 }
 
-bool already_answered(question questions[MAX_CATEGORIES][NUM_DOLLAR_VALUES], char *category, int value)
-{
-    // Implement check if the question has already been answered
-    return false;
+bool already_answered(Question *questions, char *category, int value) {
+    // Implementation to check if the question has already been answered
 }
