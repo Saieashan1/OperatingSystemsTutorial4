@@ -1,20 +1,14 @@
-/* players.h */
-
-#ifndef PLAYERS_H_
-#define PLAYERS_H_
+#ifndef PLAYERS_H
+#define PLAYERS_H
 
 #include <stdbool.h>
 
-#define MAX_LEN 256
-
-// Player struct for each player
 typedef struct {
-    char name[MAX_LEN];
+    char name[50];
     int score;
-} player;
+} Player;
 
-// Function prototypes
-extern bool player_exists(player *players, int num_players, char *name);
-extern void update_score(player *players, int num_players, char *name, int score);
+bool player_exists(Player *players, char *name);
+void update_score(Player *players, char *name, int score);
 
-#endif /* PLAYERS_H_ */
+#endif
