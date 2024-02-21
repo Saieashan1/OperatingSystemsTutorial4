@@ -29,3 +29,4 @@ void show_results(player *players, int num_players) {
         printf("%s: $%d\n", players[i].name, players[i].score);
     }
 }
+
